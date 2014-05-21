@@ -22,15 +22,17 @@
                     FB.api('/me', function (response) {
                         console.log(response);
                         console.log('My links is' + response.link);
-                        console.log('My Username is' + response.username);
+                        var name = document.getElementById('name');
+                        name.innerHTML = response.name;
+                        console.log('My Username is' + response.name);
                         console.log('My ID is' + response.id);
                     });
 
 
-                    /*FB.ui({
+                    FB.ui({
                         method: 'share',
-                        href: 'https://kangw3n.github.io/facebook/',
-                    }, function (response) {});*/
+                        href: 'https://booda406.github.io/web_test',
+                    }, function (response) {});
 					
 					
 
@@ -46,10 +48,10 @@
 							}
                     });*/
 					
-					/*FB.api('/me/picture?type=normal', function(response) { // normal/large/squere 
+					FB.api('/me/picture?type=normal', function(response) { // normal/large/squere 
 						var str="<img src="+ response.data.url +">";
 						$('body').append(str);
-					});*/
+					});
 					
 					
 					
@@ -108,5 +110,5 @@
     </script>
 
 </script>
-	
+	<div id="name"></div>
 </body>
